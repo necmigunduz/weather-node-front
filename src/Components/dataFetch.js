@@ -2,7 +2,7 @@ const DataFetch = async () => {
     let data = {};
 
     try {    
-        const response = await fetch(`https://localhost:8080/api/citiesWeather`, {      
+        const response = await fetch(`http://localhost:8080/api/citiesWeather`, {      
             method: 'GET',          
             mode: 'cors',
     });
@@ -13,7 +13,7 @@ const DataFetch = async () => {
     catch (e) {    
         data = 'ERROR';  
     }
-    return data.statistics;
+    return data;
 };
 
 export default DataFetch;
