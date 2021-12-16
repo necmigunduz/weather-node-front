@@ -3,9 +3,8 @@ import DataFetch from './dataFetch'
 import cities from './filter'
 
 const ShowData = (props) => {
-    const {filter, changeFilter} = props;
+    const {filter} = props;
     const [data, setData] = useState([]);
-    const [city, setCity] = useState()
 
     useEffect(() => {
         let dataSet = []
@@ -30,25 +29,23 @@ const ShowData = (props) => {
       const select = cities.map((option) => 
         <option key={option}>{option}</option>
       )
-      
-      const handleFilterChange = (e) => {
-        changeFilter(e.target.value);
-        
-      }
-  
-      
+      let selectedCity = ''
       let list = []
-      list = data.map((city) => {
-          if(city.cityName === city){
-            return(
-                <div>
-                    <p>{city.cityName}</p>
-                    <p></p>
-                </div>
-            )
-          }
-
-      })
+      const handleFilterChange = (e) => {
+        selectedCity = e.target.value
+        console.log(selectedCity)
+        if(selectedCity === 'Dusseldorf'){
+          console.log(data[0])
+        } else if (selectedCity === 'Milano'){
+            console.log(data[1])
+        } else if (selectedCity === 'Addisababa'){
+            console.log(data[2])
+        } else if (selectedCity === 'Amsterdam'){
+            console.log(data[3])
+        }
+      }
+      
+      
 
     return (
         <div>
