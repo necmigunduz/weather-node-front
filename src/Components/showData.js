@@ -49,7 +49,7 @@ const ShowData = (props) => {
 
     return (
         <div>
-            <div>
+            <div className='d-flex justify-content-center mt-5'>
                 <select onChange={(e) => handleFilterChange(e)} value={filter}>{select}</select>
             </div>
             <div>
