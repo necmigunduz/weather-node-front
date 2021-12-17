@@ -76,7 +76,7 @@ const ShowData = (props) => {
                 </div>
             </div>
             
-            <div className='card w-100 bg-light text-dark text-center mx-auto float-none'>
+            <div className='card w-75 mt-4 bg-light text-dark text-center mx-auto float-none'>
                 <div className='card-body'>
                   <div className='card-title'><h2>Weather in {name}</h2><strong>@</strong> <small>{date_str}</small></div>
                   <div className='card-text'>
