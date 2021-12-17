@@ -2,11 +2,11 @@
 
 # Body Monitor
 
-Weather NodeJS is a full-stack app with a fake API. The weather info for some cities is received from the back-end project(`git@github.com:necmigunduz/weather-nodejs.git`). In the front-end, a user can select a city and see the fake weather info on the page. 
+Weather NodeJS is a full-stack app with a fake API. The weather info for some cities is received from the back-end project. In the front-end, a user can select a city and see the fake weather info on the page. 
 
-![screenshot]('/screenshot.png')
+![screenshot](https://github.com/necmigunduz/weather-node-front/blob/master/screenshot.png)
 
-Link for the backend: [here](https://github.com/necmigunduz/rest-api-back)
+Link for the backend: [here](https://github.com/necmigunduz/weather-nodejs)
 
 ## Built With
 
@@ -16,15 +16,10 @@ Link for the backend: [here](https://github.com/necmigunduz/rest-api-back)
 
 ## Getting Started
 
-- `git clone https://github.com/necmigunduz/rest-api-front.git`
-- `cd rest-api-front`
+- `git clone git@github.com:necmigunduz/weather-node-front.git`
+- `cd weather-node-front`
 - `npm install`
-- `npm run start`
-
-To run the tests
-- `npm test`
-
-## [LiveVersion](https://rest-api-front.herokuapp.com/)
+- `npm start`
 
 ## Author
 
@@ -42,9 +37,5 @@ Contributions, issues, and feature requests are welcome!
 ## Show your support
 
 Give a ⭐️ if you like this project!!
-
-## Acknowledgments
-
-- To Microverse for their `README` template
 
 ## 📝 [License](https://creativecommons.org/licenses/by-nc-nd/4.0/)
