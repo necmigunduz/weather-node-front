@@ -22,12 +22,6 @@ const ShowData = (props) => {
         }
         getData()
       },[])
-      
-      // useEffect(()=>{
-      //   console.log(data)
-      // },[data])
-      
-      // console.log(cities)
 
       const select = cities.map((option) => 
         <option key={option}>{option}</option>
@@ -81,7 +75,7 @@ const ShowData = (props) => {
                   <div className='card-title'><h2>Weather in {name}</h2><strong>@</strong> <small>{date_str}</small></div>
                   <div className='card-text'>
                     <h5 className='text-dark'>Today is <strong className='text-danger'>{type}</strong></h5>
-                    <h5>and temperature is <span className='text-info'>{temp}</span>.</h5>
+                    <h5>and temperature is <span className='text-info'>{temp}</span>°C.</h5>
                     <br/>
                     <h5>Enjoy your day! <strong className='text-danger'>:)</strong></h5>
                   </div>
