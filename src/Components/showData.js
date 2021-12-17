@@ -5,6 +5,9 @@ import cities from './filter'
 const ShowData = (props) => {
     const {filter} = props;
     const [data, setData] = useState([]);
+    const [name, setName] = useState([]);
+    const [type, setType] = useState([]);
+    const [temp, setTemp] = useState([]);
 
     useEffect(() => {
         let dataSet = []
@@ -20,40 +23,64 @@ const ShowData = (props) => {
         getData()
       },[])
       
-      useEffect(()=>{
-        console.log(data)
-      },[data])
+      // useEffect(()=>{
+      //   console.log(data)
+      // },[data])
       
       // console.log(cities)
 
       const select = cities.map((option) => 
         <option key={option}>{option}</option>
       )
+
       let selectedCity = ''
-      let list = []
+      // let list = ['amsterdam','Istanbul']
       const handleFilterChange = (e) => {
         selectedCity = e.target.value
         console.log(selectedCity)
         if(selectedCity === 'Dusseldorf'){
-          console.log(data[0])
+          setName(data[0].cityName)
+          setType(data[0].weatherType)
+          setTemp(data[0].temperature)
         } else if (selectedCity === 'Milano'){
-            console.log(data[1])
+            setName(data[1].cityName)
+            setType(data[1].weatherType)
+            setTemp(data[1].temperature)
         } else if (selectedCity === 'Addisababa'){
-            console.log(data[2])
+            setName(data[2].cityName)
+            setType(data[2].weatherType)
+            setTemp(data[2].temperature)
         } else if (selectedCity === 'Amsterdam'){
-            console.log(data[3])
+            setName(data[3].cityName)
+            setType(data[3].weatherType)
+            setTemp(data[3].temperature)
         }
       }
-      
-      
-
+      let date = new Date()
+      let day = date.getDay()
+      let month = date.getMonth()
+      let year = date.getFullYear()
+      let date_str =  day +"/"+month+"/"+year
     return (
-        <div>
-            <div className='d-flex justify-content-center mt-5'>
-                <select onChange={(e) => handleFilterChange(e)} value={filter}>{select}</select>
+        <div className='d-flex flex-column justify-content-center'>
+            <div className='card text-center'>
+                <div className='card-title p-3'>
+                  <h5>Please select a city to see weather</h5>
+                </div>
+                <div className='card-text text-center p-2'>
+                  <select onChange={(e) => handleFilterChange(e)} value={filter} className='px-5 py-2 fw-bold'>{select}</select>
+                </div>
             </div>
-            <div>
-                {list}
+            
+            <div className='card w-100 bg-light text-dark text-center mx-auto float-none'>
+                <div className='card-body'>
+                  <div className='card-title'><h2>Weather in {name}</h2><strong>@</strong> <small>{date_str}</small></div>
+                  <div className='card-text'>
+                    <h3 className='text-dark'>{type}</h3>
+                    <h3 className='text-primary'>{temp}</h3>
+                  </div>
+                </div>
+                
             </div>
         </div>
     )
