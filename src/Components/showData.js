@@ -80,7 +80,8 @@ const ShowData = (props) => {
                 <div className='card-body'>
                   <div className='card-title'><h2>Weather in {name}</h2><strong>@</strong> <small>{date_str}</small></div>
                   <div className='card-text'>
-                    <h5 className='text-dark'>It is <strong className='text-danger'>{type}</strong> and temperature is <span className='text-info'>{temp}</span> today.</h5>
+                    <h5 className='text-dark'>Today is <strong className='text-danger'>{type}</strong></h5>
+                    <h5>and temperature is <span className='text-info'>{temp}</span>.</h5>
                     <br/>
                     <h5>Enjoy your day! <strong className='text-danger'>:)</strong></h5>
                   </div>
