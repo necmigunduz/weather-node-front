@@ -5,9 +5,9 @@ import cities from './filter'
 const ShowData = (props) => {
     const {filter} = props;
     const [data, setData] = useState([]);
-    const [name, setName] = useState([]);
-    const [type, setType] = useState([]);
-    const [temp, setTemp] = useState([]);
+    const [name, setName] = useState('.....');
+    const [type, setType] = useState('.....');
+    const [temp, setTemp] = useState('...');
 
     useEffect(() => {
         let dataSet = []
@@ -54,7 +54,11 @@ const ShowData = (props) => {
             setName(data[3].cityName)
             setType(data[3].weatherType)
             setTemp(data[3].temperature)
-        }
+        } else {
+          setName(' ..... ')
+          setType(' ..... ')
+          setTemp(' ... ')
+      }
       }
       let date = new Date()
       let day = date.getDay()
@@ -63,11 +67,11 @@ const ShowData = (props) => {
       let date_str =  day +"/"+month+"/"+year
     return (
         <div className='d-flex flex-column justify-content-center'>
-            <div className='card text-center'>
-                <div className='card-title p-3'>
-                  <h5>Please select a city to see weather</h5>
+            <div className='card text-center bg-dark text-light'>
+                <div className='card-title pt-2'>
+                  <h5 className='mt-3'>Please select a city to see weather</h5>
                 </div>
-                <div className='card-text text-center p-2'>
+                <div className='card-text text-center pt-1 pb-2'>
                   <select onChange={(e) => handleFilterChange(e)} value={filter} className='px-5 py-2 fw-bold'>{select}</select>
                 </div>
             </div>
@@ -76,8 +80,9 @@ const ShowData = (props) => {
                 <div className='card-body'>
                   <div className='card-title'><h2>Weather in {name}</h2><strong>@</strong> <small>{date_str}</small></div>
                   <div className='card-text'>
-                    <h3 className='text-dark'>{type}</h3>
-                    <h3 className='text-primary'>{temp}</h3>
+                    <h5 className='text-dark'>It is <strong className='text-danger'>{type}</strong> and temperature is <span className='text-info'>{temp}</span> today.</h5>
+                    <br/>
+                    <h5>Enjoy your day! <strong className='text-danger'>:)</strong></h5>
                   </div>
                 </div>
                 
