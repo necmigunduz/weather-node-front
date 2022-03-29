@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Body Monitor
+# Weather
 
 Weather NodeJS is a full-stack app with a fake API. The weather info for some cities is received from the back-end project. In the front-end, a user can select a city and see the fake weather info on the page. 
 
